@@ -1,0 +1,25 @@
+//components
+@import '../js/components/grid/BrochuresGrid';
+
+//3d parties
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+.app-container {
+  .back-btn {
+    cursor: pointer;
+  }
+  .page-header {
+    border-bottom: none;
+    margin: 10px 0px 30px;
+  }
+
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    height: 100%;
+  }
+
+  .carousel {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
