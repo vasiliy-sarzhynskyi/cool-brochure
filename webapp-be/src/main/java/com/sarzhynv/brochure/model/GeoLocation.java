@@ -1,11 +1,20 @@
 package com.sarzhynv.brochure.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+
 /**
 * Created by Vasiliy on 17.09.2016.
 */
-public class GeoLocation {
+public class GeoLocation implements Serializable {
 
+    @Getter
+    @Setter
     private Double latitude;
+    @Getter
+    @Setter
     private Double longitude;
 
     public GeoLocation() {
@@ -16,19 +25,4 @@ public class GeoLocation {
         this.longitude = longitude;
     }
 
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
 }

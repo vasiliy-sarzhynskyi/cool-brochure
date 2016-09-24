@@ -1,35 +1,23 @@
 package com.sarzhynv.brochure.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+
 /**
  * Created by Vasiliy on 17.09.2016.
  */
-public class Media {
+public class Media implements Serializable {
 
+    @Getter
+    @Setter
     private String smallImageUrl;
+    @Getter
+    @Setter
     private String mediumImageUrl;
+    @Getter
+    @Setter
     private String largeImageUrl;
 
-    public String getSmallImageUrl() {
-        return smallImageUrl;
-    }
-
-    public void setSmallImageUrl(String smallImageUrl) {
-        this.smallImageUrl = smallImageUrl;
-    }
-
-    public String getMediumImageUrl() {
-        return mediumImageUrl;
-    }
-
-    public void setMediumImageUrl(String mediumImageUrl) {
-        this.mediumImageUrl = mediumImageUrl;
-    }
-
-    public String getLargeImageUrl() {
-        return largeImageUrl;
-    }
-
-    public void setLargeImageUrl(String largeImageUrl) {
-        this.largeImageUrl = largeImageUrl;
-    }
 }

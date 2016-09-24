@@ -1,7 +1,12 @@
 package com.sarzhynv.brochure.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,18 +15,29 @@ import java.util.List;
  * Created by Vasiliy on 17.09.2016.
  */
 @Entity
-public class Brochure {
+@ToString
+public class Brochure implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
+    @Setter
     private Long id;
     @NotNull
+    @Getter
+    @Setter
     private String title;
+    @Getter
+    @Setter
     private String previewUrl;
+    @Getter
+    @Setter
     private Date publicationDate;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "brochure_id")
+    @Getter
+    @Setter
     private List<Page> pages;
 
     public Brochure() {
@@ -33,46 +49,6 @@ public class Brochure {
         this.publicationDate = publicationDate;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getPreviewUrl() {
-        return previewUrl;
-    }
-
-    public void setPreviewUrl(String previewUrl) {
-        this.previewUrl = previewUrl;
-    }
-
-    public Date getPublicationDate() {
-        return publicationDate;
-    }
-
-    public void setPublicationDate(Date publicationDate) {
-        this.publicationDate = publicationDate;
-    }
-
-    public List<Page> getPages() {
-        return pages;
-    }
-
-    public void setPages(List<Page> pages) {
-        this.pages = pages;
-    }
-
     public void addPage(Page page) {
         if (pages == null) {
             pages = new ArrayList<>();
@@ -80,14 +56,4 @@ public class Brochure {
         pages.add(page);
     }
 
-    @Override
-    public String toString() {
-        return "Brochure{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", previewUrl='" + previewUrl + '\'' +
-                ", publicationDate=" + publicationDate +
-                ", pages=" + pages +
-                '}';
-    }
 }

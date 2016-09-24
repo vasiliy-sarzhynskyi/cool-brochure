@@ -71,8 +71,14 @@
             <version>9.4-1200-jdbc4</version>
         </dependency>
 
-    </dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+            <scope>provided</scope>
+        </dependency>
 
+    </dependencies>
 
 
     <properties>
