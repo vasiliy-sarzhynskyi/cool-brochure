@@ -7,4 +7,4 @@ ${AnsiColor.MAGENTA}████████████████████
    \_____\___/ \___/|_| |____/|_|  \___/ \___|_| |_|\__,_|_|  \___|
 ${AnsiColor.MAGENTA}████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
-${AnsiColor.GREEN} :: Running Spring Boot ${spring-boot.version} :: ${AnsiColor.WHITE}
+${AnsiColor.GREEN} :: Running Spring Boot ${spring-boot.version} :: ${AnsiColor.BLACK}

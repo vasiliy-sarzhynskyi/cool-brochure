@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+    <Properties>
+        <Property name="log-path">logs</Property>
+        <Property name="PATTERN">[%d{yyyy-MM-dd HH:mm:ss}] %-5p [%t] %c{1}:%L - %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    ${PATTERN}
+                </pattern>>
+            </PatternLayout>
+        </Console>
+        <File name="App-File-Appender" fileName="${log-path}/app_log.log" >
+            <PatternLayout>
+                <pattern>
+                    ${PATTERN}
+                </pattern>
+            </PatternLayout>
+        </File>
+        <File name="SpringBoot-File-Appender" fileName="${log-path}/springboot_log.log" >
+            <PatternLayout>
+                <pattern>
+                    ${PATTERN}
+                </pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework.web" level="info" additivity="false">
+            <AppenderRef ref="SpringBoot-File-Appender"/>
+            <AppenderRef ref="Console-Appender"/>
+        </Logger>
+        <Logger name="com.sarzhynv.brochure" level="info" additivity="false">
+            <AppenderRef ref="App-File-Appender"/>
+            <AppenderRef ref="Console-Appender"/>
+        </Logger>
+        <Root>
+            <AppenderRef ref="Console-Appender"/>
+        </Root>
+    </Loggers>
+</Configuration>

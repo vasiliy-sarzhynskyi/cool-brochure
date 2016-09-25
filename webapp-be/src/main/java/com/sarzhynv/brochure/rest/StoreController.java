@@ -3,6 +3,8 @@ package com.sarzhynv.brochure.rest;
 import com.sarzhynv.brochure.model.Brochure;
 import com.sarzhynv.brochure.model.Store;
 import com.sarzhynv.brochure.service.StoreRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,8 @@ public class StoreController {
     @Autowired
     private StoreRepository storeRepository;
 
+    private final Logger logger = LoggerFactory.getLogger(StoreController.class);
+
     /**
      * get all stores
      * @return List with stores
@@ -27,6 +31,7 @@ public class StoreController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<Store> getStores() {
+        logger.debug("getStores()");
         List<Store> stores = storeRepository.findAll();
         return stores;
     }
