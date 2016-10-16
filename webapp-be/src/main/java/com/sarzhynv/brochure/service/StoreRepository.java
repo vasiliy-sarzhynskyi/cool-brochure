@@ -20,4 +20,6 @@ public interface StoreRepository extends PagingAndSortingRepository<Store, Long>
     @Query("SELECT s.brochures FROM Store s WHERE s.id = :storeid")
     List<Brochure> findBrochuresByStoreId(@Param("storeid") Long storeId);
 
+    List<Store> findByGeoLocationLatitudeAndGeoLocationLongitude(Double latitude, Double longitude);
+
 }
